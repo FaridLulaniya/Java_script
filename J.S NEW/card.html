@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .main_div {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+      height: auto;
+    }
+
+    .card {
+      margin: auto;
+      position: relative;
+      width: 400px;
+      height: 360px;
+      background: #124176db;
+      border-radius: 20px;
+      overflow: hidden;
+      float: left;
+      display: flex;
+      margin: 10px;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      width: 100%;
+      height: 100%;
+      background: rgba(33, 33, 218, 0.651);
+      transform: skewY(345deg);
+      transition: 0.2s;
+    }
+
+    .card:hover::before {
+      transform: skewY(390deg);
+    }
+
+    .info {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      z-index: 1000;
+    }
+
+    .card .info img {
+      max-width: 55%;
+      transition: 0.3s;
+    }
+
+    .card:hover .info img {
+      max-width: 50%;
+    }
+
+    .card .info h4 {
+      font-size: 2.0rem;
+      margin: 10px 0;
+      font-weight: bold;
+      font-family: cursive;
+      color: #06fdd0d7;
+    }
+
+    .card .info p {
+      font-size: 1.3em;
+      margin: 0;
+      font-weight: bold;
+      font-family: cursive;
+      color: #d34949;
+    }
+
+    button {
+      padding: 10px;
+      opacity: 0;      /* button none*/
+      border: 1px solid white;
+      border-radius: 20px;
+      transition: 0.3s;
+      background: blue;
+      color: white;
+      border: solid white 2px;
+      cursor: pointer;
+    }
+
+    .card:hover .info button {
+      opacity: 1;         /* button see in card*/
+      margin-top: 10px;
+
+    }
+
+    button:hover {
+      transform: scale(120%);
+      background-color: rgba(0, 0, 255, 0.358);
+    }
+
+    .info .img:hover {
+      transform: scale(120%);
+    }
+  </style>
+
+</head>
+
+<body id="body">
+
+
+  <div class="main_div">
+    <div class="card">
+    <div class="info">
+      <img src="https://products.shureweb.eu/shure_product_db/product_main_images/files/c25/16a/40-/original/ce632827adec4e1842caa762f10e643d.webp" alt='' class="img">
+      <h4 >Modern Headphone</h4>
+      <p>$ 40</p>
+    <button type="submit">Add to Cart</button>
+    </div>
+  </div>
+  </div>
+
+
+  <script>
+
+    let card1 = [
+      {
+         image : 'https://products.shureweb.eu/shure_product_db/product_main_images/files/c25/16a/40-/original/ce632827adec4e1842caa762f10e643d.webp',
+         heading : 'Modern Headphone',
+         price :'$ 40'
+    },
+    {
+         image : 'https://products.shureweb.eu/shure_product_db/product_main_images/files/c25/16a/40-/original/ce632827adec4e1842caa762f10e643d.webp',
+         heading : 'Modern Headphone',
+         price :'$ 40'
+    }
+  ]
+    card1.forEach((value) => {
+      
+        let main_div = document.querySelector('.main_div');
+
+    let card = document.createElement('div');
+    card.className = 'card';
+
+    let info = document.createElement('div')
+    info.className = 'info';
+    card.appendChild(info);
+
+    let img = document.createElement('img');
+    img.src = value.image;
+    img.className = 'img'
+    info.appendChild(img);
+
+    let h1 = document.createElement('h4');
+    h1.textContent = value.heading;
+    info.appendChild(h1);
+
+
+    let para = document.createElement('p');
+    para.textContent = value.price;
+    info.appendChild(para);
+
+
+    let button = document.createElement('button');
+    button.textContent = 'Add to Cart';
+    info.appendChild(button);
+
+
+    main_div.appendChild(card);
+  });
+
+
+  </script>
+</body>
+</html>

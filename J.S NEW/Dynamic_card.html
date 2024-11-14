@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            width: 600px;
+            height: auto;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .card {
+            width: 250px;
+            height: auto;
+            background-color: antiquewhite;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 3px 6px 9px 0px #80808040;
+
+        }
+
+        .card>img {
+            width: 100%;
+            height: 200px;
+            transition: all 1s ease;
+            aspect-ratio: 1/1;
+
+        }
+
+        .card:hover img {
+            scale: 1.1;
+        }
+
+        .content {
+            padding: 15px 10px;
+        }
+
+        .content>p {
+            margin: 10px 0px;
+        }
+
+        .btn-cnt {
+            margin: 10px 0px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn-cnt>button {
+            padding: 10px 15px;
+            border: 0;
+            background-color: rgb(0, 89, 255);
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body id="root">
+
+    <div class="wrapper">
+       
+    </div>
+
+    <script>
+        let bhojan = [
+            {
+                image : 'https://hungrito.com/wp-content/uploads/2024/03/Top-5-Places-For-Dal-Pakwan-In-Ahmedabad-e1709642724751.webp&#39',
+                title : 'Daal Pakwan',
+                discription : 'Sasta or tikau maal. Pet bhar k khao apna hi hai',
+                price : 30,
+                inStrock : true
+            },
+            {
+                image : 'https://content.jdmagicbox.com/comp/ahmedabad/p1/079pxx79.xx79.181115180050.i7p1/catalogue/makhan-misari-restaurant-nikol-ahmedabad-gujarati-delivery-restaurants-kcxs9ews9b.jpg&#39',
+                title : 'kathiyawadi thali',
+                discription : 'kathiyawadi thali with extra oil and sugar with chhachh and roti etc',
+                price : 120,
+                inStrock : true
+            },
+            {
+                image : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0O6EqKrHDCYSZufdLgKtbJbwGeh8NiQNBuw&s&#39',
+                title : 'Jalebi Fafda',
+                discription : 'Bahut mitha hai isliye fafda free de raha hu',
+                price : 50,
+                inStrock : true
+            },
+            {
+                image : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW8t5vonc8VfgpM1JocP9rYMU_DVWJh3V4lw&s&#39',
+                title : 'Agara ki Kachauri',
+                discription : 'Teekhi lagegi to laal chatani dalwa lena',
+                price : 20,
+                inStrock : true
+            },
+            {
+                image : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW8t5vonc8VfgpM1JocP9rYMU_DVWJh3V4lw&s&#39',
+                title : 'Agara ki Kachauri',
+                discription : 'Teekhi lagegi to laal chatani dalwa lena',
+                price : 20,
+                inStrock : true
+            }
+
+        ]
+
+        bhojan.forEach((value)=>{
+
+            let card = document.createElement('div');
+            card.className = 'card';
+
+            let img = document.createElement('img');
+            img.src = value.image
+            card.appendChild(img);
+
+            let content = document.createElement('div');
+            content.className = 'content';
+
+            card.appendChild(content);
+
+            let h1 = document.createElement('h1');
+            h1.textContent = value.title;
+
+            content.appendChild(h1);
+
+            let p = document.createElement('p');
+            p.textContent = value.discription;
+            content.appendChild(p);
+
+            let price = document.createElement('strong');
+            price.textContent =  `$ ${value.price}`;
+            content.appendChild(price);
+
+            let btn_cnt = document.createElement('div');
+            btn_cnt.className = 'btn-cnt';
+            content.appendChild(btn_cnt);
+
+            let btn = document.createElement('button');
+            btn.textContent = 'Add to Cart'
+
+            btn_cnt.appendChild(btn);
+
+            let btn2 = document.createElement('button');
+            btn2.textContent = 'Buy Now'
+
+            btn_cnt.appendChild(btn2);
+
+            let wrapper = document.querySelector('.wrapper');
+
+            wrapper.appendChild(card);
+
+
+        })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+
+<style>
+
+* {
+   font-family: "Roboto", sans-serif;
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+}
+
+body {
+   height: 100vh;
+   width: 100vw;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+#myForm {
+   height: auto;
+   width: 320px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;   
+   color: white;
+   background-color: #347928;
+   padding: 20px;
+   border-radius: 25px;
+}
+
+#myForm > h1 {
+   text-align: center;
+   padding-bottom: 5px;
+   margin-bottom: 15px;
+   border-bottom: 1px solid;
+}
+
+#myForm > label {
+   width: 100%;
+   padding-left: 10px;
+   margin-bottom: 10px;
+}
+
+#myForm > input {
+   height: 35px;
+   width: 100%;
+   padding-left: 15px;
+   border: none;
+   outline: none;
+   border-radius: 35px;
+}
+
+#myForm > button {
+   height: 35px;
+   width: 120px;
+   background-color: #fff;
+   border-radius: 45px;
+   border: none;
+   margin-top: 15px;
+}
+
+h2 {
+   height: auto;
+   width: auto;
+   color: #fff;
+   background-color: #347928;
+   margin-top: 35px;
+   padding: 20px;
+   border-radius: 45px;
+}
+
+</style>
+
+<body id="body">
+   
+   <form id="myForm">
+
+      <h1>Fahrenheit To Celsius Calculater</h1>
+
+      <label for="Fahrenheit">Fahrenheit :</label>
+      <input type="number" id="Fahrenheit" placeholder="Enter Fahrenheit Value" required>
+
+      <button type="submit">Submit</button>
+
+   </form>
+   <h2></h2>
+
+   </body>
+
+   <script>
+   
+      function Celsius(F){
+   
+       let result = (F - 32)  * 5 / 9;
+
+       return result;
+   
+      }
+
+      let body = document.getElementById('body');
+
+      let Form = document.getElementById('myForm');
+      let input=document.getElementById("Fahrenheit");
+      let h2=document.querySelector("h2");
+      
+      Form.addEventListener('submit', (e)=> {
+
+         h2.textContent= " ";
+
+         
+         e.preventDefault();
+         
+         let F = document.getElementById('Fahrenheit').value;
+
+         let C = Celsius(F);
+
+
+         h2.textContent = C + "C";
+
+         body.appendChild(h2);
+
+         // input.value=" " 
+      });
+
+   
+   </script>
+   
+</html>

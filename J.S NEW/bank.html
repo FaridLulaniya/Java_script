@@ -1,0 +1,43 @@
+<script>
+    class Bank {
+      constructor(name, account, branch, IFSC, balance, transactions) {
+        this.name = name;
+        this.account = account;
+        this.branch = branch;
+        this.IFSC = IFSC;
+        this.balance = balance; // Changed to 'balance' for consistency
+        this.transactions = transactions;
+      }
+  
+      info() {
+        console.log(`
+          name: ${this.name},
+          account: ${this.account},
+          branch: ${this.branch},
+          IFSC: ${this.IFSC},
+          Balance: ${this.balance}
+        `);
+      }
+  
+      trans() {
+        console.log(`Your last transaction History =  ${this.transactions}`);
+      }
+    }
+  
+    let ram_transaction = [100, 200, 300, 54]; 
+    
+    let ram = new Bank("Ramm  laal prasaad", "12345", "HDFC", "HDFCN1564", 1000, ram_transaction);
+  
+  
+    let sham_transaction = [1000, 800, 150, 540]; 
+  
+    let shyam = new Bank("Bhikho bhai", "6789", "HDFC", "HDFC654789", 200, sham_transaction); 
+  
+
+    ram.info();
+    ram.trans();
+    
+    shyam.info();
+    shyam.trans();
+
+  </script>

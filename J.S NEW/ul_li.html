@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+
+    <script>
+
+        let arr = ['Apple','Mango','Grapes','Kiwi'];
+
+       let body = document.getElementById('body');
+
+       let ul = document.createElement('ul');
+
+
+       arr.forEach((item)=>{
+
+        let li = document.createElement('li'); // creat list
+        li.innerText = item // send items to list
+        ul.appendChild(li); // list aree add to ul
+       
+       })
+
+       body.appendChild(ul) // print to ul console in to body
+
+    </script>
+</body>
+</html>
