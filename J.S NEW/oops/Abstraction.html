@@ -1,0 +1,77 @@
+<script>
+    class Animal{
+        constructor(name){
+            this.name = name;
+        }
+
+
+        makeSound(){
+            throw new Error('Makesound not found');
+        }
+
+
+        breed(){
+            throw new Error('breed not found')
+        }
+    }
+
+    class Dog extends Animal{
+        constructor(name,color){
+            super(name)
+            this.color = color;
+        }
+
+        makeSound(){
+            return "Bhaw Bhaw";
+        }
+
+        breed(){
+            return "Bull dog"
+        }
+
+    }
+
+    class Cat extends Animal{
+        constructor(name,food){
+            super(name);
+            this.food = food
+        }
+
+        makeSound(){
+            return "Mew Mew"
+        }
+        breed(){
+            return "Pussy cat"
+        }
+    }
+
+    let doggy = new Dog('Tommy','White');
+    let kitty = new Cat('Tom','Fish');
+
+   
+    try{
+        console.log(kitty.makeSound())
+    }catch(event){
+        console.log(event)
+    }
+
+    try{
+        console.log(kitty.breed())
+    }catch(event){
+        console.log(event)
+    }
+
+
+    try{
+        console.log(doggy.makeSound());
+    }catch(event){
+        console.log(event)
+    }
+
+
+    try{
+        console.log(doggy.breed())
+    }catch(event){
+        console.log(event)
+    }
+</script>

@@ -1,0 +1,50 @@
+<script>
+    class Animal{
+        constructor(name){
+            this.name = name;
+        }
+
+        makeSound(){
+           console.log('Some Sound of Animal')
+        } 
+    }
+
+    class Dog extends Animal{
+        constructor(name){
+            super(name)
+        }
+
+        makeSound(){
+            return "Bhaw Bhaw";
+        }
+    }
+
+    class Cat extends Animal{
+        constructor(name){
+            super(name)
+        }
+
+        makeSound(){
+            return "Mew Mew"
+        }
+    }
+
+    class Cow extends Animal{
+        constructor(name){
+            super(name)
+        }
+
+        makeSound(){
+            return "Moo Moo"
+        }
+    }
+   
+    let doggy = new Dog('Tommy');
+    let kitty = new Cat('Tom');
+    let RamPyari = new Cow('Ram Pyari')
+   
+    console.log(doggy.makeSound());
+    console.log(kitty.makeSound());
+    console.log(RamPyari.makeSound());
+
+</script>

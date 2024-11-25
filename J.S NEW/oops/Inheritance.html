@@ -1,0 +1,40 @@
+<script>
+
+    // Inheritance
+
+    class Animals{
+        constructor(name,color,sound){
+            this.name = name
+            this.color = color
+            this.sound = sound
+        }
+
+        makeSound(){
+            console.log(`Animal make sound ${this.sound}`)
+        }
+    }
+
+    class Dog extends Animals{
+
+        constructor(name,color,sound,breed,weight){
+
+            super(name,color,sound) // parent Properties
+
+            this.breed = breed
+            this.weight = weight
+
+        }
+
+        makeSound(){
+            super.makeSound();
+        }
+
+    }
+
+    let dog = new Dog("Doggy","Gray","Baw Baw","Bull Dog","40KG")
+
+  dog.makeSound()
+
+//   console.log(Animals)
+
+</script>

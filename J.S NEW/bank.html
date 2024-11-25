@@ -1,4 +1,5 @@
 <script>
+  // Define a Bank class with properties for name, account, branch, IFSC, balance, and transactions
     class Bank {
       constructor(name, account, branch, IFSC, balance, transactions) {
         this.name = name;
@@ -8,7 +9,8 @@
         this.balance = balance; // Changed to 'balance' for consistency
         this.transactions = transactions;
       }
-  
+
+      // Method to display bank account information
       info() {
         console.log(`
           name: ${this.name},
@@ -19,11 +21,13 @@
         `);
       }
   
+       // Method to display the last transaction history
       trans() {
         console.log(`Your last transaction History =  ${this.transactions}`);
       }
     }
   
+     // Create instances of the Bank class with initial data
     let ram_transaction = [100, 200, 300, 54]; 
     
     let ram = new Bank("Ramm  laal prasaad", "12345", "HDFC", "HDFCN1564", 1000, ram_transaction);
@@ -34,6 +38,7 @@
     let shyam = new Bank("Bhikho bhai", "6789", "HDFC", "HDFC654789", 200, sham_transaction); 
   
 
+    // Display information and transaction history for each instance
     ram.info();
     ram.trans();
     

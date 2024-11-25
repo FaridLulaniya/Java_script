@@ -1,0 +1,29 @@
+<script>
+
+    //Encapsulation
+
+    class Bank{
+
+        constructor(name,branch,deposit,loan){
+            this.name =  name
+            this.branch = branch
+            this.deposit = deposit
+            this.loan = loan
+        }
+
+        details(){
+            return `My Bank name is ${this.name} and We have total deposit ${this.deposit}`
+        }
+
+        loanView(){
+            console.log(`We have offered Loan : ${this.loan}`)
+        }
+
+    }
+
+    let PNB = new Bank("Punjab National Bank","Amreli","50cr","3cr")
+
+ 
+    console.log(PNB.details())
+
+</script>
