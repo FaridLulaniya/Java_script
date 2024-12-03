@@ -1,0 +1,21 @@
+<script>
+   
+
+    // call back function
+
+    function greeting(name,callback){
+        console.log(`Hello ${name} `);
+
+       return callback(10,10);
+    }
+
+
+    function add(x,y){
+        return x + y;
+    }
+
+      let res = greeting(add);
+
+      console.log(res)
+
+</script>

@@ -1,0 +1,42 @@
+<script>
+    class Bank {
+        constructor(bankname, branch, accountnumber, accountname, ifsc, balance) {
+            this.bankname = bankname;
+            this.branch = branch;
+            this.accountnumber = accountnumber;
+            this.accountname = accountname;
+            this.ifsc = ifsc;
+            this.balance = balance;
+        }
+
+        // Method of display transaction history dynamically
+        showHistory(history) {
+            console.log("Balance History");
+            history.forEach(entry => {
+                console.log(`Date: ${entry.date} [Rs ${entry.amount}] ${entry.type}`);
+            });
+        }
+    }
+
+    // Create a new instance of Bank
+    let PNB = new Bank("HDFC", "Amreli", "123456789101", "Mokesh Desai", "HDFC450680", "50000");
+
+    // Define transaction history as an array
+    const transactionHistory = [
+        { date: "02/12/2024", type: "Deposit", amount: 200 },
+        { date: "01/12/2024", type: "Withdrawal", amount: 50 },
+        { date: "13/1/2024", type: "Withdrawal", amount: 150 }
+    ];
+
+    // Print the PNB object
+    for (let key in PNB) {
+        if (PNB.hasOwnProperty(key)) { 
+            console.log(`${key} : ${PNB[key]}`);
+        }
+    }
+
+    console.log(" ");
+
+    // Display transaction history
+    PNB.showHistory(transactionHistory);
+</script>
